@@ -12,6 +12,13 @@ export default {
         ...(process.versions.pnp ? { tsc: 'yarn pnpify tsc' } : {}),
       },
     ],
+    [
+      "@snowpack/plugin-run-script",
+      {
+        "cmd": "postcss src/styles.css -o public/css/styles.css",
+        "watch": "postcss src/styles.css -o public/css/styles.css -w"
+      }
+    ],
   ],
   routes: [
     /* Enable an SPA Fallback in development: */
